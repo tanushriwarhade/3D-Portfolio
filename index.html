@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanu's 3D Portfolio</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-zinc-950 text-white overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="text-2xl font-bold tracking-tighter">PORTFOLIO<span class="text-violet-500">.</span></div>
+      <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
+        <a href="#home" class="hover:text-violet-400 transition">HOME</a>
+        <a href="#about" class="hover:text-violet-400 transition">ABOUT</a>
+        <a href="#skills" class="hover:text-violet-400 transition">SKILLS</a>
+        <a href="#projects" class="hover:text-violet-400 transition">PROJECTS</a>
+        <a href="#contact" class="hover:text-violet-400 transition">CONTACT</a>
+      </div>
+      <a href="#contact" 
+         class="px-6 py-3 bg-violet-600 hover:bg-violet-500 rounded-full text-sm font-medium transition">
+        LET'S TALK
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+    <canvas id="hero-canvas" class="hero-canvas"></canvas>
+    
+    <div class="hero-content max-w-5xl mx-auto px-6 text-center relative z-10">
+      <h1 class="text-7xl md:text-8xl font-bold tracking-tighter mb-4">
+        HI, I'M <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400">TANU</span>
+      </h1>
+      <p class="text-2xl md:text-3xl text-zinc-400 mb-8">Full-Stack Developer • 3D Enthusiast • AI Builder</p>
+      
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#projects" 
+           class="px-8 py-4 bg-white text-zinc-950 rounded-2xl font-semibold hover:scale-105 transition flex items-center gap-2">
+          <i class="fas fa-rocket"></i> SEE MY WORK
+        </a>
+        <a href="#contact" 
+           class="px-8 py-4 border border-white/50 hover:border-white rounded-2xl font-semibold transition flex items-center gap-2">
+          <i class="fas fa-paper-plane"></i> GET IN TOUCH
+        </a>
+      </div>
+    </div>
+
+    <!-- Floating Tech Badges -->
+    <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-3 text-xs uppercase bg-zinc-900/70 backdrop-blur px-6 py-3 rounded-3xl border border-white/10">
+      <div class="flex items-center gap-1"><i class="fas fa-cube text-cyan-400"></i> React</div>
+      <div class="flex items-center gap-1"><i class="fas fa-cube text-violet-400"></i> Three.js</div>
+      <div class="flex items-center gap-1"><i class="fas fa-cube text-emerald-400"></i> Tailwind</div>
+      <div class="flex items-center gap-1"><i class="fas fa-cube text-amber-400"></i> Node.js</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="max-w-7xl mx-auto px-6 py-24">
+    <h2 class="text-5xl font-bold mb-8 text-center">About Me</h2>
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-xl text-zinc-400 leading-relaxed">
+          Passionate full-stack developer with a love for beautiful interfaces and immersive 3D experiences. 
+          Currently building real-world projects, freelancing, and exploring AI + web technologies.
+        </p>
+        <p class="mt-6 text-zinc-400">Based in Pune • Open to internships &amp; freelance gigs</p>
+      </div>
+      <div class="bg-zinc-900 rounded-3xl p-8 border border-white/10">
+        <h3 class="text-violet-400 text-lg mb-4">Currently Learning</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="px-5 py-2 bg-zinc-800 rounded-2xl text-sm">Java</span>
+          <span class="px-5 py-2 bg-zinc-800 rounded-2xl text-sm">Advanced Three.js</span>
+          <span class="px-5 py-2 bg-zinc-800 rounded-2xl text-sm">Next.js 15</span>
+          <span class="px-5 py-2 bg-zinc-800 rounded-2xl text-sm">AI Agents</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="bg-zinc-900 py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-5xl font-bold mb-12 text-center">Skills &amp; Technologies</h2>
+      <div class="grid grid-cols-3 md:grid-cols-6 gap-6 text-center">
+        <div class="bg-zinc-800 hover:bg-violet-600/10 transition p-6 rounded-3xl">React / TS</div>
+        <div class="bg-zinc-800 hover:bg-violet-600/10 transition p-6 rounded-3xl">Tailwind CSS</div>
+        <div class="bg-zinc-800 hover:bg-violet-600/10 transition p-6 rounded-3xl">Three.js + R3F</div>
+        <div class="bg-zinc-800 hover:bg-violet-600/10 transition p-6 rounded-3xl">Python / Django</div>
+        <div class="bg-zinc-800 hover:bg-violet-600/10 transition p-6 rounded-3xl">Node.js / Express</div>
+        <div class="bg-zinc-800 hover:bg-violet-600/10 transition p-6 rounded-3xl">Java</div>
+        <div class="bg-zinc-800 hover:bg-violet-600/10 transition p-6 rounded-3xl">AI / NLP</div>
+        <div class="bg-zinc-800 hover:bg-violet-600/10 transition p-6 rounded-3xl">DSA &amp; LeetCode</div>
+        <div class="bg-zinc-800 hover:bg-violet-600/10 transition p-6 rounded-3xl">Git + Docker</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="max-w-7xl mx-auto px-6 py-24">
+    <h2 class="text-5xl font-bold mb-12 text-center">Featured Projects</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="group bg-zinc-900 rounded-3xl overflow-hidden border border-white/10 hover:border-violet-500 transition">
+        <div class="h-64 bg-gradient-to-br from-violet-500 to-cyan-400 flex items-center justify-center text-6xl">3️⃣</div>
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-1">3D Portfolio</h3>
+          <p class="text-zinc-400">Interactive Three.js portfolio with smooth animations.</p>
+        </div>
+      </div>
+      <div class="group bg-zinc-900 rounded-3xl overflow-hidden border border-white/10 hover:border-violet-500 transition">
+        <div class="h-64 bg-gradient-to-br from-emerald-500 to-cyan-400 flex items-center justify-center text-6xl">📄</div>
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-1">Resume + JD Optimizer</h3>
+          <p class="text-zinc-400">AI-powered resume builder using Python + OpenAI.</p>
+        </div>
+      </div>
+      <div class="group bg-zinc-900 rounded-3xl overflow-hidden border border-white/10 hover:border-violet-500 transition">
+        <div class="h-64 bg-gradient-to-br from-amber-500 to-red-400 flex items-center justify-center text-6xl">📸</div>
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-1">Document AI</h3>
+          <p class="text-zinc-400">Invoice extraction pipeline built in 24-hour hackathon.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="max-w-4xl mx-auto px-6 py-24">
+    <h2 class="text-5xl font-bold mb-12 text-center">Get In Touch</h2>
+    
+    <div class="grid md:grid-cols-2 gap-12">
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-2xl mb-6">Contact Information</h3>
+        <div class="space-y-6">
+          <div class="flex items-center gap-4">
+            <i class="fas fa-envelope text-3xl text-violet-400"></i>
+            <div>
+              <p class="font-medium">Email</p>
+              <a href="mailto:tanu@example.com" class="text-zinc-400 hover:text-white">tanu@example.com</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <i class="fas fa-phone text-3xl text-violet-400"></i>
+            <div>
+              <p class="font-medium">Phone</p>
+              <p class="text-zinc-400">+91 9876543210</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <i class="fab fa-linkedin text-3xl text-violet-400"></i>
+            <div>
+              <p class="font-medium">LinkedIn</p>
+              <a href="#" target="_blank" class="text-zinc-400 hover:text-white">linkedin.com/in/tanu</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <i class="fab fa-github text-3xl text-violet-400"></i>
+            <div>
+              <p class="font-medium">GitHub</p>
+              <a href="#" target="_blank" class="text-zinc-400 hover:text-white">github.com/tanu</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <form id="contactForm" class="space-y-6 bg-zinc-900 p-8 rounded-3xl border border-white/10">
+        <div>
+          <label class="block text-sm mb-2">Your Name</label>
+          <input id="name" type="text" required class="w-full bg-zinc-800 border border-white/20 rounded-2xl px-6 py-4 focus:outline-none focus:border-violet-500">
+        </div>
+        <div>
+          <label class="block text-sm mb-2">Email</label>
+          <input id="email" type="email" required class="w-full bg-zinc-800 border border-white/20 rounded-2xl px-6 py-4 focus:outline-none focus:border-violet-500">
+        </div>
+        <div>
+          <label class="block text-sm mb-2">Message</label>
+          <textarea id="message" rows="5" required class="w-full bg-zinc-800 border border-white/20 rounded-3xl px-6 py-4 focus:outline-none focus:border-violet-500"></textarea>
+        </div>
+        <button type="submit" 
+                class="w-full py-5 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-3xl font-semibold text-lg hover:scale-105 transition">
+          SEND MESSAGE →
+        </button>
+        <p id="formStatus" class="text-center text-sm text-emerald-400 hidden">✅ Message sent successfully!</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black py-12 text-center text-zinc-500 text-sm">
+    <p>Made with ❤️ + Three.js + Tailwind • 2026</p>
+    <p class="mt-2">Custom 3D Portfolio for Tanu</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
